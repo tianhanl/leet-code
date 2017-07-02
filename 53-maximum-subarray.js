@@ -12,7 +12,7 @@ var maxSubArray = function (nums) {
     } else {
       ret = Math.max(ret, max[nums.length - i]);
     }
-  };
+  }
   return ret;
 
 };
