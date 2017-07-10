@@ -1,7 +1,15 @@
 /**
  * Question 31
  * @param {number[]} nums
- * @return {void} Do not return anything, modify nums in-place instead.
+ * @return {void} Do not return anything, modify nums in-place instead. This
+ * solution is based on the observation that: For a sequence of number in
+ * descending number, it is impossible to swap to create a sequence larger than
+ * it, since swap between two of its member will put a smaller number on the
+ * more meaningful digit.
+ * 
+ * First, we find a pair of number form the right such that it satisfies number[i] < numbers[i+1]; It means that all numbers behind that pair of numbers are in descending order.
+ * Then, we can simply swap the two number to create a larger number
+ * Since we are finding the next larger permutation, by reverse the elements after that pair of number, the elements behind will be in ascending order.
  */
 // swap the itesm  at index a, b in place
 const swap = function (nums, a, b) {
