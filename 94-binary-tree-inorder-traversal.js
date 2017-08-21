@@ -9,7 +9,7 @@
  * @param {TreeNode} root
  * @return {number[]}
  */
-const helper = function (node, result) {
+const helper = function(node, result) {
   if (!node) {
     return;
   } else {
@@ -17,15 +17,15 @@ const helper = function (node, result) {
     result.push(node.val);
     helper(node.right, result);
   }
-}
+};
 
-var inorderTraversalRecursive = function (root) {
+var inorderTraversalRecursive = function(root) {
   let result = [];
   helper(root, result);
   return result;
 };
 
-var inorderTraversalIterative = function (root) {
+var inorderTraversalIterative = function(root) {
   let result = [];
   let current = root;
   let stack = [];
