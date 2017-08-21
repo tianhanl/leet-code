@@ -51,3 +51,29 @@ var recoverTree = function(root) {
   first.val = second.val;
   second.val = temp;
 };
+
+// better one using recursion, collected in submission seciton
+
+function recoverTreeRecursive(root) {
+  let a = null,
+    b = null,
+    last = new TreeNode(-Infinity);
+  inorderTraverse(root);
+  //if (b===null) b = last;
+  let tmp = a.val;
+  a.val = b.val;
+  b.val = tmp;
+
+  function inorderTraverse(root) {
+    if (root === null) return;
+    inorderTraverse(root.left);
+    if (root.val < last.val) {
+      if (a === null) {
+        a = last;
+      }
+      b = root;
+    }
+    last = root;
+    inorderTraverse(root.right);
+  }
+}
